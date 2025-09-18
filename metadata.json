@@ -1,0 +1,5 @@
+{
+  "name": "Australian Search Demand Analyzer",
+  "description": "An application that analyzes and visualizes current keyword search demands for a given product across Australian states and territories using Gemini.",
+  "requestFramePermissions": []
+}
