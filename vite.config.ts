@@ -1,19 +1,20 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+```typescript
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+  ],
+  // Configure build output directory if needed, but default is usually fine for Vercel.
+  // build: {
+  //   outDir: 'dist',
+  // },
+  // If you encounter issues with paths, you might need to specify the server port,
+  // but Vite usually handles this dynamically.
+  // server: {
+  //   port: 5173, // Or any other port Vite uses by default
+  // },
 });
+```
